@@ -1,16 +1,24 @@
-import java.io.File;
-public class File_Handling {
-    public static void main(String[] args) {
-        try {
-            File Data = new File("sample.java");
-        System.out.println(Data.getName());
-        System.out.println(Data.getAbsolutePath());
-        System.out.println(Data.canRead());
-        System.out.println(Data.canWrite());
-        System.out.println(Data.canExecute());
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+public class File_Handling 
+{
+    public static void main(String[] args) 
+    {
+        try 
+        {
+            BufferedReader slide = new BufferedReader(new FileReader("Unknown.java"));
+            String Line;
+            while((Line=slide.readLine())!=null)
+                {
+                    System.out.println(Line);
+                }
+                slide.close();               
         } catch (Exception e) {
             System.out.println(e);
         }
         
-    }
+    }    
 }
